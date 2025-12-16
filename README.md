@@ -1,21 +1,31 @@
 # txAdmin Access Validator
 
-A small and lightweight FiveM script that validates player access to txAdmin-related functionality using an identifier whitelist.
+A small and lightweight FiveM script that validates player access to txAdmin-related functionality using Discord role verification.
 
-This script is designed to prevent unauthorized players from triggering sensitive txAdmin events while avoiding conflicts with txAdmin’s built-in permission system.
-
+This script prevents unauthorized players from triggering sensitive txAdmin events while avoiding conflicts with txAdmin’s built-in permission system.
+---
 ## Features
-
-- Server-side identifier validation
-- Whitelist-based access control
-- Lightweight and easy to configure
+- Server-side Discord role validation
+- Uses Discord Bot API (no client exposure)
+- ConVar-based configuration via `server.cfg`
+- Lightweight role caching for performance
 - Designed to avoid txAdmin join-time conflicts
-
+- No hardcoded secrets in Lua
+---
+## Requirements
+- Discord bot with **Server Members Intent** enabled
+- Bot added to your Discord server
+- FiveM server with access to `server.cfg`
+---
 ## Configuration
 
-Edit the allowed identifiers list in the server file:
+### 1. server.cfg
 
-```lua
-local Allowed_People = {
-    "license:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-}
+Add the following lines to your `server.cfg` (or any loaded `.cfg` file):
+set Discord_Token "Bot YOUR_DISCORD_BOT_TOKEN_HERE"
+set Discord_Guild "YOUR_DISCORD_GUILD_ID"
+set Discord_Role "YOUR_REQUIRED_ROLE_ID"
+
+**Important**
+- The token **must include** the `Bot ` prefix
+- Never hardcode your Discord bot token in Lua files
