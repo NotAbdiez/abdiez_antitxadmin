@@ -49,7 +49,7 @@ permission system.
 2. Place the resource in your FiveM resources folder
 3. Ensure it in your server config:
 
-   ensure txadmin-access-validator
+   ensure abdiez_antitxadmin
 
 ---
 
@@ -60,20 +60,8 @@ permission system.
 Add the following lines to your server.cfg (or any loaded .cfg file):
 
 set Discord_Token "Bot YOUR_DISCORD_BOT_TOKEN_HERE"
+-
 set Discord_Guild "YOUR_DISCORD_GUILD_ID"
+-
 set Discord_Role  "YOUR_REQUIRED_ROLE_ID"
 
----
-
-## Configuration Notes
-
-- Discord_Token  
-  Must include the `Bot ` prefix and is never exposed to clients
-
-- Discord_Guild  
-  Your Discord server (guild) ID
-
-- Discord_Role  
-  The role required to access protected txAdmin functionality
-
----
