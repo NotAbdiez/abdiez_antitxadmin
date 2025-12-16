@@ -60,8 +60,9 @@ permission system.
 Add the following lines to your server.cfg (or any loaded .cfg file):
 
 set Discord_Token "Bot YOUR_DISCORD_BOT_TOKEN_HERE"
--
+
 set Discord_Guild "YOUR_DISCORD_GUILD_ID"
--
+
 set Discord_Role  "YOUR_REQUIRED_ROLE_ID"
+
 
